@@ -17,12 +17,60 @@
    }
 body {
   /* background-color: #121212; */
+  height: 95vh;
+  /* overflow: hidden; */
+  /* align-items: center; */
 }
+
+.header {
+  margin: auto;
+  height: 10vh;
+  display: flex;
+  width: 60vw;
+  /* margin: 2vh; */
+  /* float: center; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+
+.name {
+  /* text-align: center; */
+  /* float: left; */
+  flex: 1;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 10vh;
+}
+
+.links {
+  float: right;
+  flex: 1;
+  /* text-align:center; */
+  display: flex;
+  /* align-items: flex-end; */
+  /* text-align: center; */
+  justify-content: space-around;
+}
+
+.navlink {
+  line-height: 10vh;
+  /* float: middle; */
+}
+
 .parent-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.content-container {
+  width: 70%;
+  margin: auto;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: space-around; */
+}
+
 img {
   filter: grayscale(100%);
 }
@@ -39,7 +87,7 @@ img:hover {
   align-content: center;
   align-self: center;
   width: auto;
-  grid-gap: 5vw 5vw;
+  grid-gap: 2vw 2vw;
   
 }
 
@@ -47,6 +95,7 @@ img:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .c4-izmir {
@@ -64,7 +113,7 @@ html {
 }
 
 figure {
-  max-width: 40vw;
+  max-width: 25vw;
   height: auto;
 }
 
@@ -223,6 +272,19 @@ textarea {
     .grid {
       grid-template-columns: 1fr 1fr;
     }
+
+    .header {
+      height: 21vh;
+    }
+
+    .name {
+      line-height: 20vh;
+      font-size: 2rem;
+    }
+
+    .navlink {
+      line-height: 20vh;
+    }
   }
 
 @media only screen and (min-width: 35em) {
@@ -288,3 +350,77 @@ textarea {
     page-break-after: avoid;
   }
 }
+
+
+nav{
+  width: 100%;
+  position: fixed;
+  /* top:50px; */
+  text-align:center;
+}
+a{
+  /* font-family: 'Oswald', sans-serif; */
+  font-weight:500;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:#16151b;
+  margin:0 15px;
+  font-size:16px;
+  letter-spacing:1px;
+  position:relative;
+  display:inline-block;
+  vertical-align: middle;
+}
+a:before{
+  content:'';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background:#16151b;
+  top:47%;
+  animation:out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+a:hover:before{
+  animation:in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+
+}
+@keyframes in{
+  0%{
+    width: 0;
+    left:0;
+    right:auto;
+  }
+  100%{
+    left:0;
+    right:auto;
+    width: 100%;
+  }
+}
+@keyframes out{
+  0%{
+    width:100%;
+    left: auto;
+    right: 0;
+  }
+  100%{
+    width: 0;
+    left: auto;
+    right: 0;
+  }
+}
+@keyframes show{
+  0%{
+    opacity:0;
+    transform:translateY(-10px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* @for $i from 1 through 5 {
+  nav a:nth-child(#{$i}){
+    animation:show .2s #{$i*0.1+1}s ease 1 both;
+  }
+} */

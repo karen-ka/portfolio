@@ -22,3 +22,17 @@
 }());
 
 // Place any jQuery/helper plugins in here.
+// function linkToAbTesting() {
+//   location.href = 'abtesting.html';
+// }
+
+// $("#grid-abtesting").click(function(e) {
+//   e.preventDefault();
+//   console.log(e)
+//   window.location.href ='testing.html';
+//   // alert( "Handler for .click() called." );
+// });
+
+// $(".grid-item").click(function() {
+//   alert( "Handler for .click() called." );
+// });
